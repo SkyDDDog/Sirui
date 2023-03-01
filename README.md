@@ -475,33 +475,33 @@ ruis:
   wx:
     # 小程序id和密钥
     app:
-      id: wx129a87c8f2c167ee
-      secret: cbba2246c7feb07455f9b0263bd1e088
+      id: 
+      secret: 
     # 微信支付配置
     pay:
-      mchid: 1625199959
-      serialNumber: 15DD9513B269D7F57B2711DCB162C99543EA543D
-      APIv3: Jay182124Jay182124Jay182124Jay18
-      privateKeyPath: /cert/apiclient_key.pem
-      wechatPayCertificatePath: /cert/wechatpay_59094A954A19F0AE16AD3CBBA061340F1D4D5B93.pem
+      mchid: 
+      serialNumber: 
+      APIv3: 
+      privateKeyPath: 
+      wechatPayCertificatePath: 
   # 腾讯推拉流配置
   stream:
-    key: dbe98d38317e2dbb9bdeedf3337da6da
-    protocol: webrtc://
-    pushURL: push.ruisport.cn/live/
-    playURL: live.ruisport.cn/live/
+    key: 
+    protocol: 
+    pushURL: 
+    playURL: 
     suffix:
   # 思锐接口配置
   api:
-    url: https://id.ruisport.cn/customer/api/aaa/plan.php
-    status: https://id.ruisport.cn/customer/api/aaa/status.php
-    username: sirui@ruisport.cn
-    pwd: e10adc3949ba59abbe56e057f20f883e
-    overlayURL: https://service.ruisport.cn/h5/control.html
+    url: 
+    status: 
+    username: 
+    pwd: 
+    overlayURL: 
   # 腾讯云密钥配置
   tencentCloud:
-    SecretId: AKIDPksrfHi075oYAh7nKiyETXQ8A5rKgw1C
-    SecretKey: 760mT2Siv77mNrCMJ3aw6KOJ8lC2gARb
+    SecretId: 
+    SecretKey: 
 ```
 
 
