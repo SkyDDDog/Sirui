@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  redis:
+    image: "library/redis:alpine"
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "16379:6379"
+    volumes:
+      - ./config/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis/:/data/
+      - ./log/redis/:/var/log/redis/
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: always
+  mysql:
+    image: mysql:5.7
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./data/mysql/:/var/lib/mysql/
+      - ./data/init/:/docker-entrypoint-initdb.d/
+      - ./log/mysql/:/var/log/mysql/
+    command: [
+        '--skip-name-resolve',
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci'
+    ]
+    restart: always
+  ruis_springboot:
+    build:
+      context: java/
+      dockerfile: Dockerfile
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "12345:12345"
+    volumes:
+      - ./log/springboot/:/log/
+    depends_on:
+      - redis
+      - mysql
+    restart: always
